@@ -1,0 +1,245 @@
+/* 聊天樣式：https://hsuchihting.github.io/css/20200726/2518811882/ */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+section {
+  margin: 20px auto;
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.setting-chat {
+  &.disabled {
+    input, select {
+      cursor: not-allowed;
+    }
+  }
+}
+
+#chat {
+  width: 100%;
+  border: 1px solid #eee;
+  margin-top: 20px;
+
+  &.hidden {
+    display: none;
+  }
+
+  &.no-pin {
+
+    ul {
+      padding-top: 0;
+    }
+
+    #pin {
+      display: none;
+    }
+  }
+
+  #pin {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 90%;
+    margin-left: -45%;
+    padding: 0;
+    box-sizing: content-box;
+    background-color: #747bff;
+    border-radius: 10px;
+    color: #fff;
+  }
+  ul {
+    position: relative;
+    margin: 0;
+    min-height: 150px;
+    padding: 60px 0 0;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      margin: 20px;
+      .avatar {
+        width: 30px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+      .pic {
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          vertical-align: middle;
+        }
+      }
+      .name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #333;
+      }
+      .text {
+        padding: 8px;
+        border-radius: 10px;
+        position: relative;
+      }
+    }
+  }
+  .bottom {
+    display: flex;
+    background-color: #c2c5fe;
+    input {
+      flex: 1;
+    }
+    button {
+      width: 100px;
+    }
+  }
+}
+
+.remote {
+	.text {
+		margin-left: 20px;
+		margin-right: 80px;
+		color: #eee;
+		background-color: #4179f1;
+		&::before {
+			border-right: 10px solid #4179f1;
+			left: -5px;
+		}
+	}
+}
+.local {
+	justify-content: flex-end;
+	.text {
+		margin-right: 20px;
+		margin-left: 80px;
+		order: -1;
+		background-color: #fff;
+		color: #333;
+		&::before {
+			border-left: 10px solid #fff;
+			right: -5px;
+		}
+	}
+}
+
+.remote,
+.local {
+	& .text::before {
+		content: "";
+		position: absolute;
+		top: 10px;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+	}
+	.text {
+		font-weight: 300;
+		box-shadow: 0 0 10px #888;
+	}
+}
+
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+button {
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #3d42d8;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #c2c5fe;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+  padding: 10px;
+}
+
+select {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #000;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+}
+
+*:disabled {
+  background-color: #f8f8f8;
+  color: #555;
+  opacity: 1;
+}
+
+
+#sendMsg {
+  border-radius: 8px;
+  margin: 0 5px;
+}
+#sendBtn {
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    color: #fff;
+    background-color: #3d42d8;
+  }
+}
